@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Greenville Congregation — International Delegates Language Guide</title>
+<style>
+:root{--bg:#f5f7fa;--card:#fff;--ink:#17202a;--muted:#667085;--accent:#2457a7;--line:#e4e7ec;--context:#f8fafc}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+.hero{padding:32px 18px 24px;background:linear-gradient(135deg,#173b6c,#2b6bb2);color:white;text-align:center}
+.hero h1{font-size:28px;margin:0 0 7px}.hero p{margin:5px auto;max-width:680px;opacity:.95}.langs{font-weight:750;letter-spacing:.02em}
+.wrap{max-width:820px;margin:auto;padding:16px}.notice{background:#fff8dd;border:1px solid #f2d675;border-radius:14px;padding:13px 15px;margin:4px 0 14px;font-size:14px;line-height:1.45}
+.search{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:13px;font-size:16px;margin-bottom:10px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:5px 0 12px;position:sticky;top:0;background:var(--bg);z-index:5;scrollbar-width:thin}
+.tab{white-space:nowrap;border:1px solid var(--line);background:white;border-radius:999px;padding:9px 13px;font-weight:700;cursor:pointer}.tab.active{background:#17202a;color:white;border-color:#17202a}
+.count{font-size:13px;color:var(--muted);margin:0 2px 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:17px;margin:0 0 13px;box-shadow:0 3px 12px rgba(16,24,40,.04)}
+.num{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.06em}.english{font-size:19px;font-weight:800;margin:4px 0 13px}
+.lang{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:11px 0;border-top:1px solid var(--line)}
+.flag{font-size:13px;color:var(--muted);font-weight:800}.phrase{font-size:17px;font-weight:750;margin-top:2px}.roman{font-size:14px;color:var(--muted);margin-top:3px}
+.speak{border:0;border-radius:12px;background:#edf4ff;color:#164d92;padding:10px 12px;font-weight:750;cursor:pointer}.speak:active{transform:scale(.97)}
+.context{margin-top:9px;border-top:1px solid var(--line);padding-top:9px}.context summary{cursor:pointer;font-weight:750;color:#2457a7;list-style:none;padding:4px 0}.context summary::-webkit-details-marker{display:none}.context summary:after{content:' ▾';font-size:12px}.context[open] summary:after{content:' ▴'}.context p{background:var(--context);border-radius:12px;margin:8px 0 0;padding:11px 12px;color:#475467;font-size:14px;line-height:1.45}
+.footer{text-align:center;color:var(--muted);font-size:13px;padding:18px 10px 38px}.empty{padding:24px;text-align:center}
+@media(min-width:700px){.hero h1{font-size:34px}.card{padding:20px}.phrase{font-size:18px}}
+</style>
+</head>
+<body>
+<header class="hero">
+<div style="font-size:36px">🌏</div>
+<h1>Welcome, Brothers & Sisters!</h1>
+<p style="font-size:18px;font-weight:800;margin:4px auto 8px">Greenville Congregation</p>
+<p class="langs">English • Tagalog • Español • 日本語</p>
+<p>International Delegates Language Guide</p>
+<p><strong>International Convention • Philippines • October 28, 2026</strong></p>
+</header>
+<main class="wrap">
+<div class="notice">🔊 Tap <b>Hear</b> for pronunciation. Tap <b>💡 When to use it</b> for a quick real-life context or nuance. Voice quality depends on the voices installed on your browser or phone.</div>
+<input id="search" class="search" type="search" autocomplete="off" placeholder="Search a phrase or situation…">
+<div class="tabs" id="tabs" aria-label="Phrase categories"></div>
+<div id="count" class="count"></div>
+<div id="cards"></div>
+<div class="footer"><strong>Developed with ❤️ for Our Dear Brothers &amp; Sisters</strong><br><strong>by Nico Cando</strong><br><em>International Delegates Language Guide • October 2026</em></div>
+</main>
+<script>
+const phrases = [{"category": "Welcome & Greetings", "en": "Hello!", "tl": "Kumusta!", "es": "¡Hola!", "ja": "こんにちは！", "romaji": "Konnichiwa!", "context": "A friendly greeting you can use almost anytime."}, {"category": "Welcome & Greetings", "en": "Good morning!", "tl": "Magandang umaga po!", "es": "¡Buenos días!", "ja": "おはようございます！", "romaji": "Ohayō gozaimasu!", "context": "Use when greeting someone in the morning, especially at the start of the day's activities."}, {"category": "Welcome & Greetings", "en": "Good afternoon!", "tl": "Magandang hapon po!", "es": "¡Buenas tardes!", "ja": "こんにちは！", "romaji": "Konnichiwa!", "context": "Use when greeting someone from midday into the late afternoon."}, {"category": "Welcome & Greetings", "en": "Good evening!", "tl": "Magandang gabi po!", "es": "¡Buenas noches!", "ja": "こんばんは！", "romaji": "Konbanwa!", "context": "Use when greeting someone in the evening."}, {"category": "Welcome & Greetings", "en": "Welcome!", "tl": "Maligayang pagdating!", "es": "¡Bienvenidos!", "ja": "ようこそ！", "romaji": "Yōkoso!", "context": "A warm greeting when delegates arrive at the congregation, meeting place, or gathering."}, {"category": "Welcome & Greetings", "en": "Welcome to the Philippines!", "tl": "Maligayang pagdating sa Pilipinas!", "es": "¡Bienvenidos a Filipinas!", "ja": "フィリピンへようこそ！", "romaji": "Firipin e yōkoso!", "context": "Use when warmly welcoming international delegates to the country."}, {"category": "Welcome & Greetings", "en": "Nice to meet you.", "tl": "Ikinagagalak kitang makilala.", "es": "Mucho gusto.", "ja": "はじめまして。", "romaji": "Hajimemashite.", "context": "Use when being introduced to someone for the first time."}, {"category": "Welcome & Greetings", "en": "Great to see you!", "tl": "Masaya akong makita ka!", "es": "¡Qué gusto verte!", "ja": "またお会いできてうれしいです。", "romaji": "Mata o-ai dekite ureshii desu.", "context": "Use warmly when seeing someone you've already met."}, {"category": "Welcome & Greetings", "en": "How are you?", "tl": "Kumusta po kayo?", "es": "¿Cómo está?", "ja": "お元気ですか？", "romaji": "Ogenki desu ka?", "context": "A polite, friendly way to ask how someone is doing."}, {"category": "Getting Acquainted & Connecting", "en": "My name is ___.", "tl": "Ang pangalan ko ay ___.", "es": "Me llamo ___.", "ja": "私の名前は___です。", "romaji": "Watashi no namae wa ___ desu.", "context": "Use when introducing yourself. Simply add your name."}, {"category": "Getting Acquainted & Connecting", "en": "What is your name?", "tl": "Ano po ang pangalan ninyo?", "es": "¿Cómo se llama?", "ja": "お名前は何ですか？", "romaji": "Onamae wa nan desu ka?", "context": "A polite way to ask someone's name."}, {"category": "Getting Acquainted & Connecting", "en": "Where are you from?", "tl": "Taga-saan po kayo?", "es": "¿De dónde es?", "ja": "どちらから来ましたか？", "romaji": "Dochira kara kimashita ka?", "context": "Use to learn which country, city, or area someone comes from."}, {"category": "Getting Acquainted & Connecting", "en": "Is this your first time in the Philippines?", "tl": "Unang beses po ba ninyo sa Pilipinas?", "es": "¿Es su primera vez en Filipinas?", "ja": "フィリピンは初めてですか？", "romaji": "Firipin wa hajimete desu ka?", "context": "A natural conversation starter with visiting international delegates."}, {"category": "Getting Acquainted & Connecting", "en": "Do you speak English?", "tl": "Nagsasalita po ba kayo ng Ingles?", "es": "¿Habla inglés?", "ja": "英語を話せますか？", "romaji": "Eigo o hanasemasu ka?", "context": "Use when checking whether switching to English would make conversation easier."}, {"category": "Getting Acquainted & Connecting", "en": "I don't understand.", "tl": "Hindi ko maintindihan.", "es": "No entiendo.", "ja": "分かりません。", "romaji": "Wakarimasen.", "context": "Use when you didn't understand what was said."}, {"category": "Getting Acquainted & Connecting", "en": "Please speak slowly.", "tl": "Dahan-dahan lang po sa pagsasalita.", "es": "Hable despacio, por favor.", "ja": "ゆっくり話してください。", "romaji": "Yukkuri hanashite kudasai.", "context": "Use when you understand some of the language but need a slower pace."}, {"category": "Getting Acquainted & Connecting", "en": "A little.", "tl": "Kaunti lang.", "es": "Un poco.", "ja": "少し。", "romaji": "Sukoshi.", "context": "Useful when someone asks how much you speak, understand, want, or know."}, {"category": "Getting Acquainted & Connecting", "en": "I'll try.", "tl": "Susubukan ko.", "es": "Lo intentaré.", "ja": "やってみます。", "romaji": "Yatte mimasu.", "context": "Use when you're willing to try speaking the language, doing an activity, or tasting something."}, {"category": "Everyday Conversation", "en": "Please.", "tl": "Pakiusap po.", "es": "Por favor.", "ja": "お願いします。", "romaji": "Onegaishimasu.", "context": "Use to make a request more polite; in Tagalog, 'paki-' is often built directly into the request."}, {"category": "Everyday Conversation", "en": "Thank you.", "tl": "Salamat po.", "es": "Gracias.", "ja": "ありがとうございます。", "romaji": "Arigatō gozaimasu.", "context": "Use for everyday thanks. 'Po' adds politeness and respect in Tagalog."}, {"category": "Everyday Conversation", "en": "Thank you very much.", "tl": "Maraming salamat po.", "es": "Muchas gracias.", "ja": "本当にありがとうございます。", "romaji": "Hontō ni arigatō gozaimasu.", "context": "Use when you want to express warmer or more emphatic thanks."}, {"category": "Everyday Conversation", "en": "You're welcome.", "tl": "Walang anuman.", "es": "De nada.", "ja": "どういたしまして。", "romaji": "Dōitashimashite.", "context": "A standard response after someone thanks you."}, {"category": "Everyday Conversation", "en": "Excuse me.", "tl": "Excuse me po.", "es": "Disculpe.", "ja": "すみません。", "romaji": "Sumimasen.", "context": "Use to get someone's attention, interrupt politely, or pass by."}, {"category": "Everyday Conversation", "en": "Sorry / Pardon me.", "tl": "Pasensya na po.", "es": "Perdón.", "ja": "すみません。", "romaji": "Sumimasen.", "context": "Use for a small mistake or inconvenience, such as bumping into someone."}, {"category": "Everyday Conversation", "en": "I'm sorry.", "tl": "Ikinalulungkot ko.", "es": "Lo siento.", "ja": "ごめんなさい。", "romaji": "Gomen nasai.", "context": "Use for a genuine apology, regret, or sympathy when something unfortunate happened."}, {"category": "Everyday Conversation", "en": "It's okay / All right.", "tl": "Okay lang.", "es": "Está bien.", "ja": "大丈夫です。", "romaji": "Daijōbu desu.", "context": "Use to say something is acceptable, okay, or settled."}, {"category": "Everyday Conversation", "en": "Don't worry.", "tl": "Huwag po kayong mag-alala.", "es": "No se preocupe.", "ja": "心配しないでください。", "romaji": "Shinpai shinaide kudasai.", "context": "Use to reassure someone politely that they don't need to worry."}, {"category": "Everyday Conversation", "en": "Sure! / Of course!", "tl": "Sige! / Oo naman!", "es": "¡Claro! / ¡Claro que sí!", "ja": "もちろんです！", "romaji": "Mochiron desu!", "context": "Use when happily agreeing to a request, invitation, suggestion, or offer."}, {"category": "Everyday Conversation", "en": "Good idea!", "tl": "Magandang ideya!", "es": "¡Buena idea!", "ja": "いい考えですね！", "romaji": "Ii kangae desu ne!", "context": "Use when you like someone's suggestion or agree with a plan."}, {"category": "Help, Care & Coordination", "en": "Do you need anything?", "tl": "May kailangan po ba kayo?", "es": "¿Necesita algo?", "ja": "何か必要ですか？", "romaji": "Nanika hitsuyō desu ka?", "context": "Use when checking whether someone needs food, water, directions, assistance, or something else."}, {"category": "Help, Care & Coordination", "en": "Can you help me?", "tl": "Maaari po ba ninyo akong tulungan?", "es": "¿Puede ayudarme?", "ja": "手伝っていただけますか？", "romaji": "Tetsudatte itadakemasu ka?", "context": "Use when politely asking for help with directions, understanding something, carrying something, or another everyday situation."}, {"category": "Help, Care & Coordination", "en": "Please come with me.", "tl": "Sumama po kayo sa akin.", "es": "Venga conmigo, por favor.", "ja": "一緒に来てください。", "romaji": "Issho ni kite kudasai.", "context": "Use when guiding someone to a vehicle, seat, group, room, or meeting place."}, {"category": "Help, Care & Coordination", "en": "Stay here.", "tl": "Dito lang po kayo.", "es": "Quédese aquí.", "ja": "ここにいてください。", "romaji": "Koko ni ite kudasai.", "context": "Useful in ministry or group coordination when asking someone to remain in a particular spot."}, {"category": "Help, Care & Coordination", "en": "Wait a moment, please.", "tl": "Sandali lang po.", "es": "Espere un momento, por favor.", "ja": "ちょっと待ってください。", "romaji": "Chotto matte kudasai.", "context": "Use when asking someone politely to wait briefly."}, {"category": "Help, Care & Coordination", "en": "Let's go!", "tl": "Tara!", "es": "¡Vamos!", "ja": "行きましょう！", "romaji": "Ikimashō!", "context": "Use when it's time for the group to leave or move to the next activity."}, {"category": "Help, Care & Coordination", "en": "Are you okay?", "tl": "Okay lang po ba kayo?", "es": "¿Está bien?", "ja": "大丈夫ですか？", "romaji": "Daijōbu desu ka?", "context": "Use when someone looks uncomfortable, confused, tired, or may need assistance."}, {"category": "Help, Care & Coordination", "en": "Are you tired?", "tl": "Pagod na po ba kayo?", "es": "¿Está cansado/a?", "ja": "疲れましたか？", "romaji": "Tsukaremashita ka?", "context": "Use after walking, preaching, traveling, or a long activity to see whether someone needs a break."}, {"category": "Help, Care & Coordination", "en": "Where is the restroom?", "tl": "Nasaan po ang banyo?", "es": "¿Dónde está el baño?", "ja": "トイレはどこですか？", "romaji": "Toire wa doko desu ka?", "context": "A practical phrase for asking directions to the restroom."}, {"category": "Congregation & Ministry", "en": "Let's pray.", "tl": "Manalangin tayo.", "es": "Oremos.", "ja": "祈りましょう。", "romaji": "Inorimashō.", "context": "Use when inviting the group to pray together before a meal, activity, meeting, or other appropriate occasion."}, {"category": "Congregation & Ministry", "en": "Please read.", "tl": "Pakibasa po.", "es": "Lea, por favor.", "ja": "読んでください。", "romaji": "Yonde kudasai.", "context": "Use when politely asking someone to read a scripture, passage, message, or other text."}, {"category": "Congregation & Ministry", "en": "Let's read the Bible.", "tl": "Magbasa tayo ng Bibliya.", "es": "Leamos la Biblia.", "ja": "聖書を読みましょう。", "romaji": "Seisho o yomimashō.", "context": "Use when inviting someone to read the Bible together."}, {"category": "Congregation & Ministry", "en": "Would you like to read?", "tl": "Gusto po ba ninyong magbasa?", "es": "¿Le gustaría leer?", "ja": "読んでみますか？", "romaji": "Yonde mimasu ka?", "context": "Use when politely offering someone the opportunity to read."}, {"category": "Congregation & Ministry", "en": "Which scripture?", "tl": "Aling teksto?", "es": "¿Qué texto bíblico?", "ja": "どの聖句ですか？", "romaji": "Dono seiku desu ka?", "context": "Use when asking which Bible verse or scripture is being referred to."}, {"category": "Congregation & Ministry", "en": "Shall we preach together?", "tl": "Magkasama po ba tayong mangangaral?", "es": "¿Predicamos juntos?", "ja": "一緒に伝道しましょうか？", "romaji": "Issho ni dendō shimashō ka?", "context": "Use when inviting a visiting brother or sister to work with you in the ministry."}, {"category": "Congregation & Ministry", "en": "This is our Kingdom Hall.", "tl": "Ito po ang aming Kingdom Hall.", "es": "Este es nuestro Salón del Reino.", "ja": "こちらが私たちの王国会館です。", "romaji": "Kochira ga watashitachi no Ōkoku Kaikan desu.", "context": "Use when arriving at or pointing out the Kingdom Hall."}, {"category": "Congregation & Ministry", "en": "Let's take a picture!", "tl": "Mag-picture tayo!", "es": "¡Tomemos una foto!", "ja": "写真を撮りましょう！", "romaji": "Shashin o torimashō!", "context": "Useful for group photos during ministry, at the Kingdom Hall, at the gathering, or before saying goodbye."}, {"category": "Food, Fun & Fellowship", "en": "Are you hungry?", "tl": "Gutom na po ba kayo?", "es": "¿Tiene hambre?", "ja": "おなかがすきましたか？", "romaji": "Onaka ga sukimashita ka?", "context": "Use before a meal or when checking whether a guest would like something to eat."}, {"category": "Food, Fun & Fellowship", "en": "Let's eat!", "tl": "Kain tayo!", "es": "¡Vamos a comer!", "ja": "食べましょう！", "romaji": "Tabemashō!", "context": "A cheerful invitation when the meal is ready to begin."}, {"category": "Food, Fun & Fellowship", "en": "Please enjoy the food.", "tl": "Kain po tayo. Sana magustuhan ninyo.", "es": "¡Buen provecho!", "ja": "どうぞ召し上がってください。", "romaji": "Dōzo meshiagatte kudasai.", "context": "Use around mealtime to warmly invite someone to enjoy the food."}, {"category": "Food, Fun & Fellowship", "en": "It's delicious!", "tl": "Masarap!", "es": "¡Está delicioso!", "ja": "おいしいです！", "romaji": "Oishii desu!", "context": "Use to compliment the food or meal."}, {"category": "Food, Fun & Fellowship", "en": "I'm full, thank you.", "tl": "Busog na po ako, salamat.", "es": "Estoy lleno/a, gracias.", "ja": "お腹いっぱいです。ありがとうございます。", "romaji": "Onaka ippai desu. Arigatō gozaimasu.", "context": "Use after eating enough and politely indicating that you don't need any more food."}, {"category": "Food, Fun & Fellowship", "en": "Hope you like it.", "tl": "Sana magustuhan ninyo.", "es": "Espero que le guste.", "ja": "気に入っていただけるとうれしいです。", "romaji": "Ki ni itte itadakeru to ureshii desu.", "context": "Use when offering food, giving something, or presenting an experience you hope the visitor will enjoy."}, {"category": "Food, Fun & Fellowship", "en": "You look great!", "tl": "Ang ganda/gwapo ninyo!", "es": "¡Te ves muy bien!", "ja": "とても素敵ですね！", "romaji": "Totemo suteki desu ne!", "context": "A friendly compliment for someone's outfit or overall appearance."}, {"category": "Food, Fun & Fellowship", "en": "You are hilarious!", "tl": "Nakakatawa ka talaga!", "es": "¡Eres muy gracioso/a!", "ja": "とても面白いですね！", "romaji": "Totemo omoshiroi desu ne!", "context": "Use when someone says or does something genuinely funny. Friendly and playful."}, {"category": "Food, Fun & Fellowship", "en": "It's just a joke.", "tl": "Biro lang.", "es": "Solo es una broma.", "ja": "ただの冗談です。", "romaji": "Tada no jōdan desu.", "context": "Use when clarifying that something you said was meant playfully, not seriously."}, {"category": "Food, Fun & Fellowship", "en": "Share your experience.", "tl": "Ikuwento po ninyo ang inyong karanasan.", "es": "Cuéntenos su experiencia.", "ja": "経験を聞かせてください。", "romaji": "Keiken o kikasete kudasai.", "context": "Use when inviting someone to tell the group about an experience, including one from the ministry or their home country."}, {"category": "Until We Meet Again", "en": "See you later!", "tl": "Kita tayo mamaya!", "es": "¡Hasta luego!", "ja": "またあとで！", "romaji": "Mata ato de!", "context": "Use when you expect to see the person again later, especially later the same day."}, {"category": "Until We Meet Again", "en": "See you / See you around!", "tl": "Kita-kits!", "es": "¡Nos vemos!", "ja": "またね！", "romaji": "Mata ne!", "context": "A friendly, casual farewell when you expect your paths to cross again."}, {"category": "Until We Meet Again", "en": "Take care!", "tl": "Ingat po!", "es": "¡Cuídese!", "ja": "気をつけて！", "romaji": "Ki o tsukete!", "context": "A warm farewell expressing care for someone's safety and well-being."}, {"category": "Until We Meet Again", "en": "Have a good night.", "tl": "Ingat po. Magandang gabi!", "es": "Que pase una buena noche.", "ja": "おやすみなさい。", "romaji": "Oyasuminasai.", "context": "Use when parting at the end of the evening. Tagalog often uses 'Ingat po' naturally as part of the farewell."}];
+const categories = ["All","Welcome & Greetings","Getting Acquainted & Connecting","Everyday Conversation","Help, Care & Coordination","Congregation & Ministry","Food, Fun & Fellowship","Until We Meet Again"];
+let selected = "All";
+const tabs = document.getElementById("tabs");
+const cards = document.getElementById("cards");
+const search = document.getElementById("search");
+const count = document.getElementById("count");
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function attr(s){return esc(JSON.stringify(String(s)))}
+
+function speak(text, lang){
+  if(!("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang; u.rate = .82;
+  const voices = window.speechSynthesis.getVoices();
+  const prefix = lang.toLowerCase().slice(0,2);
+  const v = voices.find(v=>v.lang && v.lang.toLowerCase().startsWith(prefix));
+  if(v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+
+function renderTabs(){
+  tabs.innerHTML = "";
+  categories.forEach(cat=>{
+    const b=document.createElement("button");
+    b.type="button";
+    b.className="tab"+(cat===selected?" active":"");
+    b.textContent=cat;
+    b.dataset.category=cat;
+    b.setAttribute("aria-pressed",cat===selected?"true":"false");
+    b.addEventListener("click",()=>{
+      selected=cat;
+      renderTabs();
+      renderCards();
+    });
+    tabs.appendChild(b);
+  });
+}
+
+function matches(p,q){
+  if(!q) return true;
+  return [p.en,p.tl,p.es,p.ja,p.romaji,p.context,p.category].join(" ").toLowerCase().includes(q);
+}
+
+function langRow(label, flag, phrase, lang, roman=""){
+  const row=document.createElement("div"); row.className="lang";
+  const left=document.createElement("div");
+  left.innerHTML=`<div class="flag">${flag} ${label}</div><div class="phrase">${esc(phrase)}</div>${roman?`<div class="roman">${esc(roman)}</div>`:""}`;
+  const btn=document.createElement("button"); btn.type="button"; btn.className="speak"; btn.textContent="🔊 Hear";
+  btn.addEventListener("click",()=>speak(phrase,lang));
+  row.append(left,btn); return row;
+}
+
+function renderCards(){
+  const q=search.value.trim().toLowerCase();
+  const filtered=phrases.map((p,i)=>({...p,n:i+1}))
+    .filter(p=>(selected==="All"||p.category===selected)&&matches(p,q));
+  count.textContent=`${filtered.length} phrase${filtered.length===1?"":"s"} shown`;
+  cards.innerHTML="";
+  if(!filtered.length){
+    const e=document.createElement("div"); e.className="card empty"; e.textContent="No matching phrase or situation found."; cards.appendChild(e); return;
+  }
+  filtered.forEach(p=>{
+    const a=document.createElement("article"); a.className="card";
+    a.innerHTML=`<div class="num">${String(p.n).padStart(2,"0")} • ${esc(p.category.toUpperCase())}</div><div class="english">${esc(p.en)}</div>`;
+    a.appendChild(langRow("TAGALOG","🇵🇭",p.tl,"fil-PH"));
+    a.appendChild(langRow("SPANISH","🇪🇸",p.es,"es"));
+    a.appendChild(langRow("JAPANESE","🇯🇵",p.ja,"ja-JP",p.romaji));
+    const d=document.createElement("details"); d.className="context";
+    d.innerHTML=`<summary>💡 When to use it</summary><p>${esc(p.context)}</p>`;
+    a.appendChild(d); cards.appendChild(a);
+  });
+}
+search.addEventListener("input",renderCards);
+renderTabs();
+renderCards();
+</script>
+</body></html>
